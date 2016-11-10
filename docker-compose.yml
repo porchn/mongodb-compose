@@ -1,0 +1,12 @@
+version: '2'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017" 
+    restart: always
+    volumes:
+      - ./mongodb/dbconf:/data/configdb
+      - ./mongodb/dbdata:/data/db
+      - ./mongodb/dblogs:/var/log/mongodb
